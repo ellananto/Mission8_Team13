@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Quadrant";
+}
+
+@model List<TaskFormResponse>
+
+<style>
+    .grid {
+        display: table;
+        border-spacing: 20px
+    }
+
+    .row {
+        display: table-row
+    }
+
+    .cell {
+        width: 400px;
+        height: 400px;
+        background: pink;
+        display: table-cell;
+    }
+
+</style>
+<!DOCTYPE html>
+<html>
+<body>
+    <center>
+        <h1>Quadrant Task Organizer</h1>
+        <div class="grid">
+            <div class="row">
+                <div class="cell">
+                    <h3>Quadrant 1</h3>
+                    <!--Make the table for quadrant 1 tasks only -->
+                    <table class="table table-bordered">
+                        <tbody>
+                            @foreach (var x in Model)
+                            {
+                                if (x.Quadrant == 1 & x.Completed == false)
+                                {
+                                    <tr>
+                                        <td>@x.TaskName</td>
+                                        <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></td>
+                                        <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cell">
+                    <h3>Quadrant 2</h3>
+                    <!--Make the table for quadrant 2 tasks only -->
+                    <table class="table table-bordered">
+                        <tbody>
+                            @foreach (var x in Model)
+                            {
+                                if (x.Quadrant == 2 & x.Completed == false)
+                                {
+                                    <tr>
+                                        <td>@x.TaskName</td>
+                                        <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></td>
+                                        <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <h3>Quadrant 3</h3>
+                    <!--Make the table for quadrant 3 tasks only -->
+                    <table class="table table-bordered">
+                        <tbody>
+                            @foreach (var x in Model)
+                            {
+                                if (x.Quadrant == 3 & x.Completed == false)
+                                {
+                                    <tr>
+                                        <td>@x.TaskName</td>
+                                        <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></td>
+                                        <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cell">
+                    <h3>Quadrant 4</h3>
+                    <!--Make the table for quadrant 4 tasks only -->
+                    <table class="table table-bordered">
+                        <tbody>
+                            @foreach (var x in Model)
+                            {
+                                if (x.Quadrant == 4 & x.Completed == false)
+                                {
+                                    <tr>
+                                        <td>@x.TaskName</td>
+                                        <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a></td>
+                                        <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
