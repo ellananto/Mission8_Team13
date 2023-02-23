@@ -11,12 +11,16 @@ namespace Mission8.Models
         [Key]
         [Required]
         public int TaskID { get; set; }
+
         [Required]
         public string TaskName { get; set; }
-        public DateTime DueDate { get; set; }
+        
+        public DateTime? DueDate { get; set; }
+
         [Required]
         [Range(1,4)]
         public int Quadrant { get; set; }
+
         public bool Completed { get; set; }
 
         // foreign key relationship

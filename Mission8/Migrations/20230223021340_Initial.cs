@@ -27,7 +27,7 @@ namespace Mission8.Migrations
                     TaskID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TaskName = table.Column<string>(nullable: false),
-                    DueDate = table.Column<DateTime>(nullable: false),
+                    DueDate = table.Column<DateTime>(nullable: true),
                     Quadrant = table.Column<int>(nullable: false),
                     Completed = table.Column<bool>(nullable: false),
                     CategoryID = table.Column<string>(nullable: true),
@@ -67,22 +67,22 @@ namespace Mission8.Migrations
             migrationBuilder.InsertData(
                 table: "responses",
                 columns: new[] { "TaskID", "CategoryID", "CategoryNameCategoryID", "Completed", "DueDate", "Quadrant", "TaskName" },
-                values: new object[] { 1, "2", null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Study for 404 midterm" });
+                values: new object[] { 1, "2", null, false, null, 1, "Study for 404 midterm" });
 
             migrationBuilder.InsertData(
                 table: "responses",
                 columns: new[] { "TaskID", "CategoryID", "CategoryNameCategoryID", "Completed", "DueDate", "Quadrant", "TaskName" },
-                values: new object[] { 2, "2", null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Mission 8 Assignment" });
+                values: new object[] { 2, "2", null, false, null, 2, "Mission 8 Assignment" });
 
             migrationBuilder.InsertData(
                 table: "responses",
                 columns: new[] { "TaskID", "CategoryID", "CategoryNameCategoryID", "Completed", "DueDate", "Quadrant", "TaskName" },
-                values: new object[] { 3, "1", null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "Call Mom" });
+                values: new object[] { 3, "1", null, false, null, 3, "Call Mom" });
 
             migrationBuilder.InsertData(
                 table: "responses",
                 columns: new[] { "TaskID", "CategoryID", "CategoryNameCategoryID", "Completed", "DueDate", "Quadrant", "TaskName" },
-                values: new object[] { 4, "1", null, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "Therapy" });
+                values: new object[] { 4, "1", null, false, null, 4, "Therapy" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_responses_CategoryNameCategoryID",

@@ -9,7 +9,7 @@ using Mission8.Models;
 namespace Mission8.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20230218055246_Initial")]
+    [Migration("20230223021340_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,7 +69,7 @@ namespace Mission8.Migrations
                     b.Property<bool>("Completed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DueDate")
+                    b.Property<DateTime?>("DueDate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quadrant")
@@ -91,7 +91,6 @@ namespace Mission8.Migrations
                             TaskID = 1,
                             CategoryID = "2",
                             Completed = false,
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Quadrant = 1,
                             TaskName = "Study for 404 midterm"
                         },
@@ -100,7 +99,6 @@ namespace Mission8.Migrations
                             TaskID = 2,
                             CategoryID = "2",
                             Completed = false,
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Quadrant = 2,
                             TaskName = "Mission 8 Assignment"
                         },
@@ -109,7 +107,6 @@ namespace Mission8.Migrations
                             TaskID = 3,
                             CategoryID = "1",
                             Completed = false,
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Quadrant = 3,
                             TaskName = "Call Mom"
                         },
@@ -118,7 +115,6 @@ namespace Mission8.Migrations
                             TaskID = 4,
                             CategoryID = "1",
                             Completed = false,
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Quadrant = 4,
                             TaskName = "Therapy"
                         });

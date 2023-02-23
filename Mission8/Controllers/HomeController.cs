@@ -19,11 +19,12 @@ namespace Mission8.Controllers
             _logger = logger;
             blahContext = someName;
         }
-
+        //Creating all the necessary views for the project.
         public IActionResult Index()
         {
             return View();
         }
+          
         [HttpGet]
         public IActionResult Quadrant()
         {
@@ -43,7 +44,7 @@ namespace Mission8.Controllers
             {
                 blahContext.Add(ar);
                 blahContext.SaveChanges();
-                return View("Index", ar);
+                return View("Confirmation", ar);
             }
             else
             {
@@ -78,6 +79,12 @@ namespace Mission8.Controllers
             blahContext.responses.Remove(ar);
             blahContext.SaveChanges();
             return RedirectToAction("Quadrant");
+        }
+        [HttpGet]
+        public IActionResult CompletedTasks()
+        {
+            var completedTasks = blahContext.responses.Where(x => x.Completed == true).ToList();
+            return View(completedTasks);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
