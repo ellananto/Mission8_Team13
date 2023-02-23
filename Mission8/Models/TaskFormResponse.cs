@@ -12,12 +12,12 @@ namespace Mission8.Models
         [Required]
         public int TaskID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Task Name, How else will I know what needs to be done?")]
         public string TaskName { get; set; }
         
         public DateTime? DueDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Quadrant needed")]
         [Range(1,4)]
         public int Quadrant { get; set; }
 

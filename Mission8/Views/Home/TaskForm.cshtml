@@ -8,6 +8,7 @@
                 <h1>Enter a Task Below:</h1>
                 <br />
                 <form method="post">
+                    <div asp-validation-summary="All"></div>
                     <label asp-for="TaskName" class="form-check-label">Task Name: </label>
                     <input asp-for="TaskName" /><br /><br />
                     <label asp-for="DueDate">Due Date: </label>
